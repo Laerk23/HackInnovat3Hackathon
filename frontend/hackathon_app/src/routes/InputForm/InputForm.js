@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './InputForm.scss';
-import Loading from '/Users/avidhruva/Desktop/HackInnovat3Hackathon/frontend/hackathon_app/src/routes/Loading Screen 1/LoadingScreen1.js'
+import Loading from '../Loading Screen 1/LoadingScreen1.js'
 
 const InputForm = () => {
   const hardcodedMajors = [
@@ -329,19 +329,22 @@ const InputForm = () => {
   return (
     <>
     <Loading />
-    <div className="input-form">
-      {currentField === 'firstName' && renderInputField('firstName', 'First Name:', firstName, handleInputChange, true)}
-      {currentField === 'college' && renderInputField('college', 'College:', college, handleInputChange, false)}
-      {currentField === 'major' && renderInputField('major', 'Major:', major, handleInputChange, true)}
-      {currentField === 'graduationSemester' && renderInputField('graduationSemester', 'Graduation Semester:', graduationSemester, handleInputChange, false)}
-      {currentField === 'preferences' && renderInputField('preferences', 'Preferences:', preferences, handleInputChange, false)}
-      {currentField === 'transcript' &&
-        <div className="input-field">
-          <label>Transcript:</label>
-          <input type="file" onChange={handleFileUpload} />
-          <button onClick={(e) => handleNextField(e, 'submit')}>Submit</button>
-        </div>
-      }
+    <div className="red-nav-bar"></div>
+    <div className = "input-form">
+      <div className="first-name-field">{currentField === 'firstName' && renderInputField('firstName', 'First Name:', firstName, handleInputChange, true)}</div>
+      <div className="college-field">{currentField === 'college' && renderInputField('college', 'College:', college, handleInputChange, false)}</div>
+      <div className="major-field">{currentField === 'major' && renderInputField('major', 'Major:', major, handleInputChange, true)}</div>
+      <div className="graduation-field">{currentField === 'graduationSemester' && renderInputField('graduationSemester', 'Graduation Semester:', graduationSemester, handleInputChange, false)}</div>
+      <div className="preferences-field">{currentField === 'preferences' && renderInputField('preferences', 'Preferences:', preferences, handleInputChange, false)}</div>
+      <div className="input-field transcript-field">
+        {currentField === 'transcript' &&
+          <>
+            <label>Transcript:</label>
+            <input type="file" onChange={handleFileUpload} />
+            <button onClick={(e) => handleNextField(e, 'submit')}>Submit</button>
+          </>
+        }
+      </div>
     </div>
     </>
   ); 

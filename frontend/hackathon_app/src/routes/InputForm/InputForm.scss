@@ -1,4 +1,7 @@
-$input-form-font: 'Times New Roman', sans-serif;
+@font-face {
+  font-family: 'Kollektif';
+  src: url('Kollektif.ttf') format('truetype');
+}
 
 @keyframes fadeIn {
   from {
@@ -10,25 +13,20 @@ $input-form-font: 'Times New Roman', sans-serif;
 }
 
 .input-form {
-<<<<<<< Updated upstream:frontend/hackathon_app/src/routes/InputForm/InputForm.scss
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
-  animation-delay: 2s; 
-
-=======
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
->>>>>>> Stashed changes:frontend/hackathon_app/src/InputForm/InputForm.scss
+  animation-delay: 2s;
   max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
-  font-family: $input-form-font; 
-  
-  
+  font-family: 'Kollektif', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   header {
     margin-bottom: 20px;
@@ -52,12 +50,12 @@ $input-form-font: 'Times New Roman', sans-serif;
 
     input {
       padding: 10px;
-      margin-bottom: 20px; 
+      margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 3px;
       font-size: 16px;
-      width: 100%; 
-      box-sizing: border-box; 
+      width: 100%;
+      box-sizing: border-box;
     }
 
     button {
@@ -81,6 +79,56 @@ $input-form-font: 'Times New Roman', sans-serif;
     p {
       font-size: 14px;
       color: #888;
+    }
+  }
+}
+
+.first-name-field,
+.preferences-field,
+.college-field,
+.major-field,
+.graduation-field,
+.transcript-field {
+  color: red;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 2px solid #ff4d4f;
+  border-radius: 8px;
+
+  input {
+    width: calc(100% - 30px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  input:focus {
+    border-color: #ff4d4f;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #333333;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 12px 24px;
+    background-color: #ff4d4f;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #e63946;
     }
   }
 }
