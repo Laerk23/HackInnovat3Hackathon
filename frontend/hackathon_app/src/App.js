@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import InputForm from './InputForm/InputForm'; // Import InputForm component
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           Learn React
         </a>
       </header>
+      {/* Render the InputForm component */}
+      <InputForm />
     </div>
   );
 }
