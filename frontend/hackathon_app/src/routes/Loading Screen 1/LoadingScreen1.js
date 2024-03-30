@@ -1,10 +1,13 @@
 import React from 'react';
-import './Loading.css'; // Import CSS for styling
+import './LoadingScreen1.scss'; // Import CSS for styling
+import Gif from './terrier_walking.gif'; // Import GIF file
 
 function Loading() {
   return (
     <div className="loading-container">
-      <h1>One moment...</h1>
+      <div className="background-image" style={{ backgroundImage: `url(${Gif})` }}>
+        {/* <h1 className="loading-text">One moment...</h1> */}
+      </div>
     </div>
   );
 }
