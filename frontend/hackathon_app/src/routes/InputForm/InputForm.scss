@@ -10,25 +10,20 @@ $input-form-font: 'Times New Roman', sans-serif;
 }
 
 .input-form {
-<<<<<<< Updated upstream:frontend/hackathon_app/src/routes/InputForm/InputForm.scss
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
-  animation-delay: 2s; 
-
-=======
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
->>>>>>> Stashed changes:frontend/hackathon_app/src/InputForm/InputForm.scss
   max-width: 600px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
   font-family: $input-form-font; 
-  
-  
+
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 2s; 
 
   header {
     margin-bottom: 20px;
