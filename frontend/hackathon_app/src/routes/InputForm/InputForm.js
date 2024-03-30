@@ -146,7 +146,7 @@ const InputForm = () => {
     "Hospitality Communications",
     "Education & Human Development"
   ];
-  
+
   const [currentField, setCurrentField] = useState('firstName');
   const [firstName, setFirstName] = useState('');
   const [college, setCollege] = useState('');
@@ -314,7 +314,7 @@ const InputForm = () => {
         </div>
       );
     }    
-  
+    
     return (
       <div className="input-field">
         <label>{label}</label>
@@ -328,26 +328,37 @@ const InputForm = () => {
   
   return (
     <>
-    <Loading />
-    <div className="red-nav-bar"></div>
-    <div className = "input-form">
-      <div className="first-name-field">{currentField === 'firstName' && renderInputField('firstName', 'First Name:', firstName, handleInputChange, true)}</div>
-      <div className="college-field">{currentField === 'college' && renderInputField('college', 'College:', college, handleInputChange, false)}</div>
-      <div className="major-field">{currentField === 'major' && renderInputField('major', 'Major:', major, handleInputChange, true)}</div>
-      <div className="graduation-field">{currentField === 'graduationSemester' && renderInputField('graduationSemester', 'Graduation Semester:', graduationSemester, handleInputChange, false)}</div>
-      <div className="preferences-field">{currentField === 'preferences' && renderInputField('preferences', 'Preferences:', preferences, handleInputChange, false)}</div>
-      <div className="input-field transcript-field">
-        {currentField === 'transcript' &&
-          <>
-            <label>Transcript:</label>
-            <input type="file" onChange={handleFileUpload} />
-            <button onClick={(e) => handleNextField(e, 'submit')}>Submit</button>
-          </>
-        }
+      <Loading />
+      <div className="red-nav-bar"></div>
+      <div className="input-form">
+        <div className={`first-name-field ${currentField === 'firstName' && 'active'}`}>
+          {currentField === 'firstName' && renderInputField('firstName', 'First Name:', firstName, handleInputChange, true)}
+        </div>
+        <div className={`college-field ${currentField === 'college' && 'active'}`}>
+          {currentField === 'college' && renderInputField('college', 'College:', college, handleInputChange, false)}
+        </div>
+        <div className={`major-field ${currentField === 'major' && 'active'}`}>
+          {currentField === 'major' && renderInputField('major', 'Major:', major, handleInputChange, true)}
+        </div>
+        <div className={`graduation-field ${currentField === 'graduationSemester' && 'active'}`}>
+          {currentField === 'graduationSemester' && renderInputField('graduationSemester', 'Graduation Semester:', graduationSemester, handleInputChange, false)}
+        </div>
+        <div className={`preferences-field ${currentField === 'preferences' && 'active'}`}>
+          {currentField === 'preferences' && renderInputField('preferences', 'Preferences:', preferences, handleInputChange, false)}
+        </div>
+        <div className={`input-field transcript-field ${currentField === 'transcript' && 'active'}`}>
+          {currentField === 'transcript' &&
+            <>
+              <label>Transcript:</label>
+              <input type="file" onChange={handleFileUpload} />
+              <button onClick={(e) => handleNextField(e, 'submit')}>Submit</button>
+            </>
+          }
+        </div>
       </div>
-    </div>
     </>
   ); 
-};
+  };
+  
 
 export default InputForm;
