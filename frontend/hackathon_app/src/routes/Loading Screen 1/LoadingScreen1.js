@@ -6,7 +6,7 @@ function Loading() {
   return (
     <div className="loading-container">
       <div className="background-image" style={{ backgroundImage: `url(${Gif})` }}>
-        {/* <h1 className="loading-text">One moment...</h1> */}
+        <p className="loading-text"><b>One moment...</b></p>
       </div>
     </div>
   );
