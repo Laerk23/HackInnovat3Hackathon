@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './InputForm.scss';
-import Loading from '/Users/avidhruva/Desktop/HackInnovat3Hackathon/frontend/hackathon_app/src/routes/Loading Screen 1/LoadingScreen1.js'
+import Loading from '../Loading Screen 1/LoadingScreen1.js'
 
 const InputForm = () => {
   const hardcodedMajors = [
