@@ -1,6 +1,6 @@
 import React from 'react';
-import './LoadingScreen1.scss'; // Import CSS for styling
-import Gif from './terrier_walking.gif'; // Import GIF file
+import './LoadingScreen2.scss'; // Import CSS for styling
+import Gif from './running_terrier.gif'; // Import GIF file
 
 function Loading() {
   return (
