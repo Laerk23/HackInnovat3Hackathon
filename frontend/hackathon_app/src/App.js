@@ -39,19 +39,10 @@ function App() {
       <div>
         <Routes>
           <Route path="/Home" element={<WelcomePage />} />
-          <Route path="/loading1" element={<LoadingScreen1 />} />
+          <Route path="/Home/InputForm" element={<InputForm />} />
         </Routes>
       </div>
     </Router>
-      {showLoading1 && <LoadingScreen1 />}
-      {showInputForm && (
-        <InputForm
-          onComplete={() => {
-            setInputFormCompleted(true);
-          }}
-        />
-      )}
-      {showLoading2 && <LoadingScreen2 />}
     </div>
   );
 }

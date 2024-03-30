@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './InputForm.scss';
+import Loading from '/Users/avidhruva/Desktop/HackInnovat3Hackathon/frontend/hackathon_app/src/routes/Loading Screen 1/LoadingScreen1.js'
 
 const InputForm = () => {
   const hardcodedMajors = [
@@ -326,6 +327,8 @@ const InputForm = () => {
   };
   
   return (
+    <>
+    <Loading />
     <div className="input-form">
       {currentField === 'firstName' && renderInputField('firstName', 'First Name:', firstName, handleInputChange, true)}
       {currentField === 'college' && renderInputField('college', 'College:', college, handleInputChange, false)}
@@ -340,7 +343,8 @@ const InputForm = () => {
         </div>
       }
     </div>
-  );  
+    </>
+  ); 
 };
 
 export default InputForm;
