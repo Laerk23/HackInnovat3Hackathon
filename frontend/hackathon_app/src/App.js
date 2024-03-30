@@ -1,11 +1,22 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+=======
+import React from 'react';
+import InputForm from './InputForm/InputForm'; 
+>>>>>>> 66fa2863dd2f38046200014e0d726a321a20cad7
 
 function Loading() {
   return (
+<<<<<<< HEAD
     <div className="loading-container">
       <h1>One moment...</h1>
+=======
+    <div className="App">
+      {}
+      <InputForm />
+>>>>>>> 66fa2863dd2f38046200014e0d726a321a20cad7
     </div>
   );
 }
