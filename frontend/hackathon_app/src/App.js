@@ -7,42 +7,39 @@ import InputForm from './routes/InputForm/InputForm'; // Import InputForm compon
 import LoadingScreen2 from './routes/LoadingScreen2/LoadingScreen2'; // Import LoadingScreen2 component
 
 function App() {
-  const [showLoading1, setShowLoading1] = useState(true);
-  const [showInputForm, setShowInputForm] = useState(false);
-  const [inputFormCompleted, setInputFormCompleted] = useState(false);
-  const [showLoading2, setShowLoading2] = useState(false);
+  const [currentScreen, setCurrentScreen] = useState('loading1');
+  const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    // Simulate backend process
-    const backendProcess = setTimeout(() => {
-      setShowInputForm(true); // Show InputForm after a delay
-      setShowLoading1(false); // Hide LoadingScreen1
+    setTimeout(() => {
+      setCurrentScreen('inputForm');
     }, 2500);
 
-    return () => clearTimeout(backendProcess);
+    fetch('http://localhost:5000/api/courses')
+      .then(response => response.json())
+      .then(data => {
+        setCourses(data);
+        setCurrentScreen('loading2');
+      })
+      .catch(error => {
+        console.error('Error fetching course data:', error);
+      });
   }, []);
-
-  useEffect(() => {
-    // Start LoadingScreen2 when InputForm is completed
-    if (!inputFormCompleted) return;
-
-    const interval = setInterval(() => {
-      setShowLoading2((prev) => !prev); // Toggle showLoading2 every second
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [inputFormCompleted]);
 
   return (
     <div className="App">
-        <Router> {/* Wrap your Routes within Router */}
-      <div>
-        <Routes>
-          <Route path="/Home" element={<WelcomePage />} />
-          <Route path="/Home/InputForm" element={<InputForm />} />
-        </Routes>
-      </div>
-    </Router>
+      <Router>
+        <div>
+          {currentScreen === 'loading1' && <LoadingScreen1 />}
+          {currentScreen === 'inputForm' && (
+            <Routes>
+              <Route path="/" element={<WelcomePage />} />
+              <Route path="/InputForm" element={<InputForm />} />
+            </Routes>
+          )}
+          {currentScreen === 'loading2' && <LoadingScreen2 />}
+        </div>
+      </Router>
     </div>
   );
 }
