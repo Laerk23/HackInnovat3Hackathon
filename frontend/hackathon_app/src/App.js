@@ -11,9 +11,9 @@ function App() {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setCurrentScreen('inputForm');
-    }, 2500);
+    //   setTimeout(() => {
+    setCurrentScreen('inputForm');
+    // }, 2500);
 
     fetch('http://localhost:5000/api/courses')
       .then(response => response.json())
