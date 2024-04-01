@@ -7,6 +7,10 @@ import time
 import json
 from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException, TimeoutException
 
+# This file does the work which is gathering cds, cfa, com, sar, sha, and sth 
+# courses to feed into our hackathon python notebook. It should be only ran once
+#to achieve this.
+
 courses_list = []
 colleges= ['CDS', 'CFA', 'COM', 'SAR', 'SHA', 'STH' ]
 # ['CAS','CDS', 'CFA', 'COM', 'SAR', 'ENG', 'questrom', 'SHA', 'STH', 'wheelock' ]
@@ -24,7 +28,7 @@ def go_to_next_page(driver, current_page_number, base_url):
     except TimeoutException:
         return False
     
-def College_Scrapper():
+def College_Scraper():
     # Set up the driver
     for college in colleges:
 
@@ -130,9 +134,6 @@ def College_Scrapper():
         courses_list.clear()
                     
 
-College_Scrapper()
+College_Scraper()
 
 # Save to JSON
-
-
-
